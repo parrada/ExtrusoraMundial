@@ -5,20 +5,20 @@
  */
 
 function modulos(id){
-    var Id = id;
-    var opc = document.getElementById(Id);
-    if(opc.style.display == 'none') opc.style.display = 'display-block';
-    else opc.style.display = 'none';
-}
-
-function limpiarModulos(){
-    var modulos = ["extrusion","ventas","compras","inventario"];
+    var modulos = ["mextrusion","mventas","mcompras","minventario"];
     for (var i=0; i<modulos.length; i++){
         var mod = modulos[i];
         var m = document.getElementById(mod);
-        if(m.style.display == 'none') m.style.display = 'display-block';
-        else m.style.display = 'none';
+        if(m != undefined){
+            if(m.style.display == 'inline') m.style.display = 'none';
+        }
+        
     }
-    
+    var Id = 'm'+id.id;
+    var opc = document.getElementById(Id);
+    if(opc.style.display == 'none' || opc.style.display == '') opc.style.display = 'inline';
+    else opc.style.display = 'none';
 }
+
+
 
