@@ -11,6 +11,12 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src="js/redireccion.js"></script>
         <link type="text/css" rel="stylesheet" href="css/principal.css">
+        <script src="js/angular.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/Extrusion.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/Crono.css" media="screen" />
+        <script type="text/javascript" src="js/Extrusion.js"></script>
+        <script type="text/javascript" src="js/ExtrusionA.js"></script>
+        <script type="text/javascript" src="js/Crono.js"></script>
     </head>
     
     <body>
@@ -24,8 +30,31 @@ and open the template in the editor.
 <!--             <input type="button" value="Inventario" onclick="redirigir(4)"></br>-->
         </div>
         <div class="content_co" id="mextrusion">
-            
-            
+            <div class="ac">
+		<input type="button" id="acumulador" value="Agregar" class="agregar" onclick="obtenerHora(); acumulador();"><!-- Reini();-->
+		<input type="text" id="cantidad" value="0" disabled="disabled" class="cantidad" >
+                <input type="button" id="MR" value="Ver Rollos" class="agregar" onclick="mostrarListaRollos()">
+		
+            </div>
+            <div class="teclado" id="teclado">
+		<input type="text" id="peso" disabled="disabled" class="peso"></br>
+		<input type="button" name="1" class="numero" value="1" onclick="teclado(this.value)">
+                <input type="button" name="2" class="numero" value="2" onclick="teclado(this.value)">
+                <input type="button" name="3" class="numero" value="3" onclick="teclado(this.value)"></br>
+                <input type="button" name="4" class="numero" value="4" onclick="teclado(this.value)">
+                <input type="button" name="5" class="numero" value="5" onclick="teclado(this.value)">
+                <input type="button" name="6" class="numero" value="6" onclick="teclado(this.value)"></br>
+                <input type="button" name="7" class="numero" value="7" onclick="teclado(this.value)">
+                <input type="button" name="8" class="numero" value="8" onclick="teclado(this.value)">
+                <input type="button" name="9" class="numero" value="9" onclick="teclado(this.value)"></br>
+                <input type="button" name="0" class="numero" value="0" onclick="teclado(this.value)">
+ 		<input type="button" id="punto" class="numero" value="." onclick="teclado(this.value)">
+		<input type="button" id="borrar" value="DEL" class="numero" onclick="borrar()"></br>
+                <input type="button" id="guardar" value="G.PESO" class="guardarP" onclick="peso()">
+                <input type="button" id="finalizar" value="Finalizar" onclick="finalizar();" class="fin" disabled>
+		
+            </div>
+           <input type="button" value="Stop &#8718;" onclick="obtenerHora();"> 
             
         </div></br>
         <div class="content_co2" id="mventas">
